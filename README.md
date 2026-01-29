@@ -1,5 +1,7 @@
 # End-to-End-Machine-Learning-Project-Using-MLOPS
 
+---
+
 ## Overview
 This project focuses on predicting whether a US visa application
 will be **Certified** or **Denied** based on applicant and job-related features.
@@ -61,10 +63,6 @@ python -m venv usvisa
 
 ```bash
 - pip install -r requirements.txt
-```
-
-```bash
-- python main.py
 ```
 
 ---
