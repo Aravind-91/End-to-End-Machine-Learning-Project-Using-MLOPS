@@ -50,26 +50,32 @@ rather than advanced model optimization.
 
 ---
 
-## Project Structure
+## How To Run
+```bash
+python -m venv usvisa
+```
 
-us_visa/
- ├── data_ingestion.py
- ├── data_validation.py
- ├── data_transformation.py
- ├── model_trainer.py
- ├── model_evaluation.py
- ├── utils.py
-main.py
-requirements.txt
-README.md
+```bash
+- source usvisa/Scripts/activate
+```
+
+```bash
+- pip install -r requirements.txt
+```
+
+```bash
+- python main.py
+```
 
 ---
 
-## How To Run
-python -m venv usvisa
-source usvisa/Scripts/activate
-pip install -r requirements.txt
-python main.py
+## Workflow:
+
+1. constants
+2. entity
+3. components
+4. pipeline
+5. Main file
 
 ---
 
