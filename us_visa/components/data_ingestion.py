@@ -95,7 +95,7 @@ class DataIngestion:
 
             logging.info("Got the data from mongodb")
 
-            self.split_data_as_train_test()
+            self.split_data_as_train_test(dataframe)
 
             logging.info("Performed train test split on the dataset")
 

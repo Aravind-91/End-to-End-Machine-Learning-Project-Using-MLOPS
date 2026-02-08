@@ -2,7 +2,8 @@ import sys
 from us_visa.exception import USvisaException
 from us_visa.logger import logging
 import os
-from us_visa.constants import DATABASE_NAME, MONGODB_URL_KEY
+from us_visa.constants import DATABASE_NAME
+from us_visa.configuration.env_config import get_mongo_db_url
 import pymongo
 import certifi
 
@@ -23,9 +24,7 @@ class MongoDBClient:
     def __init__(self, database_name=DATABASE_NAME) -> None:
         try:
             if MongoDBClient.client is None:
-                mongo_db_url = MONGODB_URL_KEY
-                if mongo_db_url is None:
-                    raise Exception(f"Key {MONGODB_URL_KEY} is not set.")
+                mongo_db_url = get_mongo_db_url()
                 MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
             self.client = MongoDBClient.client
             self.database = self.client[database_name]

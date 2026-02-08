@@ -1,6 +1,7 @@
 import os
 from us_visa.constants import *
 from datetime import datetime
+from dataclasses import dataclass
 
 TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
 
