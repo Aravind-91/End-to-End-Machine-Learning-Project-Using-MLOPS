@@ -49,7 +49,7 @@ def save_numpy_array_data(file_path: str, array: np.array):
     """
     try:
         dir_path = os.path.dirname(file_path)
-        os.makedirs(file_path, exist_ok=True)
+        os.makedirs(dir_path, exist_ok=True)
         with open(file_path, "wb") as file_obj:
             np.save(file_obj, array)
     except Exception as e:
@@ -94,5 +94,6 @@ def drop_columns(df: DataFrame, cols: list) -> DataFrame:
     try:
         df = df.drop(columns=cols, axis=1)
         logging.info("Exited the drop_columns method of utils")
+        return df
     except Exception as e:
         raise USvisaException(e, sys) from e
