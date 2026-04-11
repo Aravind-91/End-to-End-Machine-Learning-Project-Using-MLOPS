@@ -177,17 +177,6 @@ class DataTransformation:
                 logging.info(
                     "Applying preprocessing object on training dataframe and testing dataframe"
                 )
-
-                print("Type of input_feature_train_df:", type(input_feature_train_df))
-                print(
-                    "Shape:",
-                    (
-                        input_feature_train_df.shape
-                        if input_feature_train_df is not None
-                        else None
-                    ),
-                )
-
                 input_feature_train_arr = preprocessor.fit_transform(
                     input_feature_train_df
                 )
