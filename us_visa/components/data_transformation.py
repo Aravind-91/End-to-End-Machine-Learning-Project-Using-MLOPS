@@ -3,31 +3,31 @@ import sys
 import numpy as np
 import pandas as pd
 from imblearn.combine import SMOTEENN
+from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import (
-    StandardScaler,
     OneHotEncoder,
     OrdinalEncoder,
     PowerTransformer,
+    StandardScaler,
 )
-from sklearn.compose import ColumnTransformer
 
-from us_visa.constants import TARGET_COLUMN, SCHEMA_FILE_PATH, CURRENT_YEAR
-from us_visa.entity.config_entity import DataTransformationConfig
+from us_visa.constants import CURRENT_YEAR, SCHEMA_FILE_PATH, TARGET_COLUMN
 from us_visa.entity.artifact_entity import (
-    DataTransformationArtifact,
     DataIngestionArtifact,
+    DataTransformationArtifact,
     DataValidationArtifact,
 )
+from us_visa.entity.config_entity import DataTransformationConfig
+from us_visa.entity.estimator import TargetValueMapping
 from us_visa.exception import USvisaException
 from us_visa.logger import logging
 from us_visa.utils.main_utils import (
-    save_object,
-    save_numpy_array_data,
-    read_yaml_file,
     drop_columns,
+    read_yaml_file,
+    save_numpy_array_data,
+    save_object,
 )
-from us_visa.entity.estimator import TargetValueMapping
 
 
 class DataTransformation:
